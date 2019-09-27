@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>文件上传</title>
+		
+		<style>
+            a.download_file{
+                display: block;
+                margin-top: 10px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>文件上传</h1>
+        <hr>
+        <form method="POST" action="/file_upload" enctype="multipart/form-data">
+            <input type="file" name="file_choose">&nbsp;<input type="submit" value="上传">
+            
+        
+        </form>
+		
+		<h2>文件下载</h2>
+        <hr>
+        {% for i in file_list %}
+            <a href="/download/{{i}}" class="download_file">{{i}}</a>
+        {% endfor %}
+		
+
+    </body>
+
+
+</html>
